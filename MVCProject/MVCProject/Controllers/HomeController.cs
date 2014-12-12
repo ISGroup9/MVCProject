@@ -84,7 +84,7 @@ namespace MVCProject.Controllers
         {
             var myList = new List<Advisory>();
             myList.Add(new Advisory { Name = "Adam Wariner", Email = "adamwariner@exxonmobil.com", Picture = "../Images/ISAB/awariner.jpg" });
-            myList.Add(new Advisory { Name = "Adam Wright", Email = "adamwright@ey.com", Picture = "g" });
+            myList.Add(new Advisory { Name = "Jim", Email = "e@bob.com", Picture = "g" });
 
             return myList;  
         }
