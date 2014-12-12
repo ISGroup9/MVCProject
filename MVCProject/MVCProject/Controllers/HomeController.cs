@@ -9,7 +9,7 @@ namespace MVCProject.Controllers
 {
     public class HomeController : Controller
     {
-        private FacultyDbContext dbFaculty = new FacultyDbContext();
+        //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
