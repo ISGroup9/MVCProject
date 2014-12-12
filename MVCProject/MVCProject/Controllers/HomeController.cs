@@ -9,7 +9,7 @@ namespace MVCProject.Controllers
 {
     public class HomeController : Controller
     {
-        private FacultyDbContext dbFaculty = new FacultyDbContext();
+        //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
@@ -22,6 +22,13 @@ namespace MVCProject.Controllers
             ViewBag.Message = "Your app description page.";
 
             return View();
+        }
+
+        public ActionResult Advisory()
+        {
+            var model = this.getAdvisoryList();
+
+            return View(model);
         }
 
         public ActionResult Faculty()
@@ -72,6 +79,15 @@ namespace MVCProject.Controllers
             myList.Add(new Courses { Name = "gewq", CreditHours = "3", Level = CourseLevel.Graduate });
 
             return myList.Where(c => c.Level == cLevel).ToList();
+        }
+        public List<Advisory> getAdvisoryList()
+        {
+            var myList = new List<Advisory>();
+            myList.Add(new Advisory { Name = "Bob", Email = "bob@bob.com", Picture = "myoffice" });
+            myList.Add(new Advisory { Name = "Jim", Email = "e@bob.com", Picture = "g" });
+            myList.Add(new Advisory { Name = "Jack", Email = "d@bob.com", Picture = "hmyoffice" });
+            myList.Add(new Advisory { Name = "John", Email = "a@bob.com", Picture = "mjioyoffice" });
+            return myList;  
         }
 
     }
