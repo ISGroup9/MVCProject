@@ -24,6 +24,13 @@ namespace MVCProject.Controllers
             return View();
         }
 
+        public ActionResult Advisory()
+        {
+            var model = this.getAdvisoryList();
+
+            return View(model);
+        }
+
         public ActionResult Faculty()
         {
             //var model = dbFaculty.Faculty.ToList();
@@ -72,6 +79,15 @@ namespace MVCProject.Controllers
             myList.Add(new Courses { Name = "gewq", CreditHours = "3", Level = CourseLevel.Graduate });
 
             return myList.Where(c => c.Level == cLevel).ToList();
+        }
+        public List<Advisory> getAdvisoryList()
+        {
+            var myList = new List<Advisory>();
+            myList.Add(new Advisory { Name = "Bob", Email = "bob@bob.com", Picture = "myoffice" });
+            myList.Add(new Advisory { Name = "Jim", Email = "e@bob.com", Picture = "g" });
+            myList.Add(new Advisory { Name = "Jack", Email = "d@bob.com", Picture = "hmyoffice" });
+            myList.Add(new Advisory { Name = "John", Email = "a@bob.com", Picture = "mjioyoffice" });
+            return myList;  
         }
 
     }
