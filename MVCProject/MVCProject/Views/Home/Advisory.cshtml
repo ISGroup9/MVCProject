@@ -29,7 +29,8 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Picture)
+                @*Html.DisplayFor(modelItem => item.Picture)*@
+                <img src="@item.Picture" alt="@item.Name" height="150"/>
             </td>
         </tr>
     }
