@@ -1,0 +1,71 @@
+﻿@model MVCProject.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                @*<h1>@ViewBag.Title.</h1>*@
+            </hgroup>
+
+            <p>
+                <a href="~/Home/"> Home </a>
+                <a href="~/Home/Courses"> Undergraduate Courses</a>
+                <a href="~/Home/Courses/G"> Graduate Courses</a>
+                <a href="~/Home/Faculty"> Faculty </a>
+                <a href="~/Home/Advisory"> Advisory Board</a>
+                <a href="~/Home/Contact"> Contact Us</a>
+
+            </p>
+        </div>
+    </section>
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title Us!</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<section class="contact">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+
+    <div class="editor-label">
+        @Html.Label("Degree Type")
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.GradPlan)
+        @Html.ValidationMessageFor(model => model.GradPlan)
+    </div>
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Notes)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Notes)
+        @Html.ValidationMessageFor(model => model.Notes)
+    </div>
+
+
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+</section>
