@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<MVCProject.Models.DegreeType>
+
+@{
     ViewBag.Title = "Home Page";
 }
 @section featured {
@@ -47,4 +49,28 @@
         It is owned and operated by The Church of Jesus Christ of Latter-day Saints (LDS Church), and, excluding online students, is the largest 
         religious university and one of the largest private universities in the U.S., with 34,000 on-campus students.
     </li>
+
+    <li class="four">
+        <h5>Undergraduate Degree</h5>
+        Information systems professionals define, develop, and maintain the information system infrastructure that supports the operations of all businesses, governments, and other institutions. These professionals use a wide variety of skills in carrying out this function. The BSIS degree develops your ability to function effectively as a professional, applying state-of-the-art technology in solving business problems. You are trained in business and information systems and taught to understand complex business environments.
+        <br /><br />
+        Built on a solid foundation of business courses, the curriculum advances your understanding of technologies in the design and development of information systems. You gain technical expertise in systems analysis; systems design and implementation; database development and management; programming; telecommunications (networking; 2-tier, 3-tier, and n-tier application development; and web application development.
+    </li>
+
+    <li class="five">
+        <h5>Master's Degree</h5>
+        The Masters of Information Systems Management (MISM) degree is designed for students seeking professional careers in information systems. The MISM blends information systems theory with a "hands on" approach to learning information systems design and implementation skills. Management topics are particularly emphasized.
+        <br /><br />
+        The MISM degree features a newly revised curriculum allowing students to develop a foundation of key Information Systems topics including management and strategy, people and organizations, IT architecture, security, and business intelligence. Additionally, 15 hours of elective courses are required, giving students the flexibility to further study information systems and/or management topics of their choice. All MISM classes contain the underpinning themes of ethics, communication, professionalism, team dynamics, controls, risk management, project management, flexibility, and adaptability.
+    </li>
+    
+    
 </ol>
+@using (Html.BeginForm("Index","Home"))
+{
+    <p>View Program Requirements:</p>
+    <p>
+        Degree: @Html.DropDownList("Type")
+        <input type="submit" value="Go" />
+    </p>
+}
