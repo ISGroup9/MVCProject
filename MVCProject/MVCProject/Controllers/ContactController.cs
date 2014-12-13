@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using MVCProject.Models;
 using System.Net.Mail;
 using System.Net;
+using MVCProject.Controllers;
 
 namespace MVCProject.Controllers
 {
@@ -31,6 +32,8 @@ namespace MVCProject.Controllers
 
         public ActionResult Create()
         {
+            var list = new SelectList(HomeController.getDegreeTypeList(), "Type", "Type");
+            ViewBag.Types = list;
             return View();
         }
 
@@ -45,13 +48,15 @@ namespace MVCProject.Controllers
             {
                
                     string from = "informationsystemsbyu@gmail.com";
+                    
 
                     using (MailMessage mail = new MailMessage(from, contact.Email))
                     {
-                        mail.Subject = "This email is just for you";
-                        mail.Body = contact.Name + ", We've been watching you.";
+                        mail.From = new MailAddress("informationsystemsbyu@gmail.com", "BYU Information Systems");
+                        mail.Subject = "Thank you for contacting us";
+                        mail.Body = contact.Name + ", We'll contact you shortly <br /> <br /> We've been watching you.<br /> <br /> We know who you are. <br /><br /> Thanks, <br /> <br /> BYU Information Systems <br /> <br /> Reply with UNSUBSCRIBE to be removed from these emails";
 
-                        mail.IsBodyHtml = false;
+                        mail.IsBodyHtml = true;
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.gmail.com";
                         smtp.EnableSsl = true;
