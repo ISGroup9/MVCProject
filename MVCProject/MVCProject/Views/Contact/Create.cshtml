@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Enter Contact Information";
 }
-
+<!--This is the menu bar-->
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -25,7 +25,7 @@
 }
 
 <h2>Enter Contact Information</h2>
-
+<!--Here is where the form begins. It requires data validation-->
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -48,6 +48,7 @@
             @Html.EditorFor(model => model.Email)
             @Html.ValidationMessageFor(model => model.Email)
         </div>
+        <!--Here is the drop down box for selecting your degree-->
 
         <div class="editor-label">
             @Html.Label("Degree Type")

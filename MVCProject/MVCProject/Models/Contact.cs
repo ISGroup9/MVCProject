@@ -7,6 +7,9 @@ using System.Web;
 
 namespace MVCProject.Models
 {
+
+    //This is the contact model. It has an ID, the Name of the Person, and Email address (validated),
+    //A Degree Type object, and optional notes
     public class Contact
     {
         public int ID { get; set; }
