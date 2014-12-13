@@ -22,10 +22,22 @@ namespace MVCProject.Controllers
         //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
+            var model = this.getDegreeTypeList();
+
+            ViewBag.Type = new SelectList(model,"ID","Type");
             //message that is displayed on the home page screen
             ViewBag.Message = "Welcome to the Information Systems Home Page!";
 
-            return View();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(DegreeType d)
+        {
+            if (d.Type=="Undergraduate Degree")
+                return RedirectToAction("Courses");
+            else return RedirectToAction("Courses/G");
+
         }
 
         //public ActionResult About()
@@ -48,45 +60,7 @@ namespace MVCProject.Controllers
             return View(model);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "  - We would love to hear from you.";
-
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Contact(Contact contact)
-        {
-            if (ModelState.IsValid)
-            {
-                string from = "TestProfAnderson@gmail.com";
-
-                using (MailMessage mail = new MailMessage(from, contact.Email))
-                {
-                    mail.Subject = "This email is just for you";
-                    mail.Body = contact.Name + ", /nWe've been watching you.";
-
-                    mail.IsBodyHtml = false;
-                    SmtpClient smtp = new SmtpClient();
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.EnableSsl = true;
-                    NetworkCredential networkCredential = new NetworkCredential(from, "BYUIS403");
-                    smtp.UseDefaultCredentials = true;
-                    smtp.Credentials = networkCredential;
-                    smtp.Port = 587;
-
-                    smtp.Send(mail);
-                    ViewBag.Message = "Sent";
-                    return RedirectToAction("Index");
-                }
-            }
-            else
-            {
-                return View("Index");
-            }
-        }
+      
 
         public ActionResult Courses(string id = "U")
         {
@@ -118,6 +92,14 @@ namespace MVCProject.Controllers
             myList.Add(new Faculty { Name = "Tom Meservy", Email = "tmeservy@byu.edu", Office = "781 TNRB", Picture = "../Images/Professors/tmeservy.jpg" });
             myList.Add(new Faculty { Name = "Marshall Romney", Email = "mromney@byu.edu", Office = "790A TNRB", Picture = "../Images/Professors/mromney.jpg" });
 
+            return myList;
+        }
+
+        public List<DegreeType> getDegreeTypeList()
+        {
+            var myList = new List<DegreeType>();
+            myList.Add(new DegreeType { Type = "Undergraduate Degree" });
+            myList.Add(new DegreeType { Type = "Graduate Degree" });
             return myList;
         }
 

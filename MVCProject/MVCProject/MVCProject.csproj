@@ -192,6 +192,7 @@
     <Compile Include="Models\Advisory.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Courses.cs" />
+    <Compile Include="Models\DegreeType.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
