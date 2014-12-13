@@ -74,10 +74,20 @@ namespace MVCProject.Controllers
         public List<Courses> getCourseList(CourseLevel cLevel)
         {
             var myList = new List<Courses>();
-            myList.Add(new Courses { Name = "a", CreditHours = "3", Level = CourseLevel.Undergraduate });
-            myList.Add(new Courses { Name = "asfdb", CreditHours = "3", Level = CourseLevel.Undergraduate });
-            myList.Add(new Courses { Name = "fdsa", CreditHours = "3", Level = CourseLevel.Graduate });
-            myList.Add(new Courses { Name = "gewq", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 401", Name = "Systems Analysis and Design", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 402", Name = "Database Systems", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 403",  Name = "Principles of Business ", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 404", Name = "Data Communications", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 411", Name = "Systems Design and Implementation", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 413", Name = "Enterprise Application Development", CreditHours = "3", Level = CourseLevel.Undergraduate });
+
+            myList.Add(new Courses { Number = "IS 531", Name = "Enterprise Infrastructure", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 550", Name = "MISM Capstone Introduction", CreditHours = ".5", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 551", Name = "Leading Change in a Technical Environment", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 552", Name = "MISM Capstone", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 555", Name = "Data Mining for Business Intelligence", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 560", Name = "Information Security Management", CreditHours = "3", Level = CourseLevel.Graduate });
+            myList.Add(new Courses { Number = "IS 562", Name = "Project Management", CreditHours = "3", Level = CourseLevel.Graduate });
 
             return myList.Where(c => c.Level == cLevel).ToList();
         }
