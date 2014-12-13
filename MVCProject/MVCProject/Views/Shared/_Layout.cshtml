@@ -11,15 +11,12 @@
     <body>
         <header>
             <div class="content-wrapper">
+                
                 <div class="float-left">
-                    @*<p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>*@
-                    @*<img src="../Images/Logos/logo1.png" alt="item.Name" width="150"  />*@
-                    <img src="../Images/Logos/logo5.jpg" alt="item.Name" width="150" />
+                    <img src="../../Images/Logos/logo5.jpg" alt="item.Name" width="150" />
                 </div>
+                <div class="site-title"><p>@Html.ActionLink("Information Systems", "Index", "Home")</p></div> 
                 <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
