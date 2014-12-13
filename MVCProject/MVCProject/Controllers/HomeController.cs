@@ -1,4 +1,11 @@
-﻿using System;
+﻿//group 1:9 
+//taylor curtis, landon curtis, john meservy, ben willard
+//date: 12/12/14
+//description: this program is a simple mvc program for the byu information systems department. it has a home page with a menu across the top that allows
+//the user to navigate (link) to the other pages. There is a page for viewing the undergraduate courses, graduate courses, a page to view faculty members, and a page 
+//to view the advisory board members. There is also a page to contact us with questions. 
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,15 +19,16 @@ namespace MVCProject.Controllers
         //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
+            //message that is displayed on the home page screen
             ViewBag.Message = "Welcome to the Information Systems Home Page!";
 
             return View();
         }
 
-        public ActionResult About()
-        {
-            return View();
-        }
+        //public ActionResult About()
+        //{
+        //    return View();
+        //}
 
         public ActionResult Advisory()
         {
@@ -59,6 +67,8 @@ namespace MVCProject.Controllers
             return View(model);
         }
 
+        //the faculty list: the name, email, office, and picture of each professor are added to a list and then retrieved to be used in displaying
+        //the information for each professor on the faculty page
         public List<Faculty> getFacultyList()
         {
             var myList = new List<Faculty>();
@@ -71,6 +81,9 @@ namespace MVCProject.Controllers
 
             return myList;
         }
+
+        //the course list: the number, name, credit hour, and type (grad/undergrad) of each course are added to a list of courses and then are
+        //retrieved and displayed on their respective page, either grad or undergrad, depending on the course level. 
         public List<Courses> getCourseList(CourseLevel cLevel)
         {
             var myList = new List<Courses>();
@@ -91,6 +104,9 @@ namespace MVCProject.Controllers
 
             return myList.Where(c => c.Level == cLevel).ToList();
         }
+
+        //the advisory board list: the name, email, and picture of each board member are added to a list and then retrieved to be used in displaying
+        //the information for each board member on the respective page
         public List<Advisory> getAdvisoryList()
         {
             var myList = new List<Advisory>();
