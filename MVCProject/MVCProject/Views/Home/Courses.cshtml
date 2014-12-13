@@ -8,15 +8,14 @@
         <div class="content-wrapper">
             <hgroup class="title">
                 @*<h1>@ViewBag.Title.</h1>*@
-                <h1>@ViewBag.Message</h1>
             </hgroup>
 
             <p>
                 <a href="~/Home/"> Home </a>
-                <a href="~/Home/Faculty"> Faculty </a>
-                <a href="~/Home/Advisory"> Advisory Board</a>
                 <a href="~/Home/Courses"> Undergraduate Courses</a>
                 <a href="~/Home/Courses/G"> Graduate Courses</a>
+                <a href="~/Home/Faculty"> Faculty </a>
+                <a href="~/Home/Advisory"> Advisory Board</a>      
                 <a href="~/Home/Contact"> Contact Us</a>
 
             </p>
@@ -26,18 +25,15 @@
 
 
 
-<h2>Courses</h2>
+<h2>@ViewBag.Message</h2>
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Course @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            Credits
+            Credit Hours
         </th>
-
-
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -46,7 +42,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td align="center">
                 @Html.DisplayFor(modelItem => item.CreditHours)
             </td>
 
