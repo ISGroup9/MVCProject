@@ -11,6 +11,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MVCProject.Models;
+using System.Net.Mail;
+using System.Net;
+using System.IO;
 
 namespace MVCProject.Controllers
 {
@@ -52,6 +55,39 @@ namespace MVCProject.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                string from = "TestProfAnderson@gmail.com";
+
+                using (MailMessage mail = new MailMessage(from, contact.Email))
+                {
+                    mail.Subject = "This email is just for you";
+                    mail.Body = contact.Name + ", /nWe've been watching you.";
+
+                    mail.IsBodyHtml = false;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    NetworkCredential networkCredential = new NetworkCredential(from, "BYUIS403");
+                    smtp.UseDefaultCredentials = true;
+                    smtp.Credentials = networkCredential;
+                    smtp.Port = 587;
+
+                    smtp.Send(mail);
+                    ViewBag.Message = "Sent";
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
         public ActionResult Courses(string id = "U")
         {
             List<Courses> model;
@@ -90,7 +126,7 @@ namespace MVCProject.Controllers
             var myList = new List<Courses>();
             myList.Add(new Courses { Number = "IS 401", Name = "Systems Analysis and Design", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 402", Name = "Database Systems", CreditHours = "3", Level = CourseLevel.Undergraduate });
-            myList.Add(new Courses { Number = "IS 403",  Name = "Principles of Business ", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 403", Name = "Principles of Business ", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 404", Name = "Data Communications", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 411", Name = "Systems Design and Implementation", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 413", Name = "Enterprise Application Development", CreditHours = "3", Level = CourseLevel.Undergraduate });
@@ -114,8 +150,11 @@ namespace MVCProject.Controllers
             myList.Add(new Advisory { Name = "Adam Wariner", Email = "adamwariner@exxonmobil.com", Picture = "../Images/ISAB/awariner.jpg" });
             myList.Add(new Advisory { Name = "Adam Wright", Email = "adamwright@ey.com", Picture = "../Images/ISAB/awright.jpg" });
 
-            return myList;  
+            return myList;
         }
+
+        
+
 
     }
 }

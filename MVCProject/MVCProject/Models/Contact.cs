@@ -12,14 +12,17 @@ namespace MVCProject.Models
         public int ID { get; set; }
         
         [Required]
+        [DataType(DataType.Text)]
         public string Name { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
-        public string GradPlan { get; set; }
+        public string Degree_Type { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Notes { get; set; }
     }
 
