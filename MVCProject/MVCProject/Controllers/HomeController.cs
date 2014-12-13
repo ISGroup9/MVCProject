@@ -64,10 +64,13 @@ namespace MVCProject.Controllers
         public List<Faculty> getFacultyList()
         {
             var myList = new List<Faculty>();
-            myList.Add(new Faculty { Name = "Bob", Email = "bob@bob.com", Office = "myoffice" });
-            myList.Add(new Faculty { Name = "Jim", Email = "e@bob.com", Office = "g" });
-            myList.Add(new Faculty { Name = "Jack", Email = "d@bob.com", Office = "hmyoffice" });
-            myList.Add(new Faculty { Name = "John", Email = "a@bob.com", Office = "mjioyoffice" });
+            myList.Add(new Faculty { Name = "Conan Albrecht", Email = "ca@byu.edu", Office = "780 TNRB", Picture = "../Images/Professors/calbrecht.jpg" });
+            myList.Add(new Faculty { Name = "Gove Allen", Email = "gove@byu.edu", Office = "778 TNRB", Picture = "../Images/Professors/gallen.jpg" });
+            myList.Add(new Faculty { Name = "Greg Anderson", Email = "profganderson@byu.edu", Office = "782 TNRB", Picture = "../Images/Professors/ganderson.jpg" });
+            myList.Add(new Faculty { Name = "Bonnie Anderson", Email = "anderson@byu.edu", Office = "776 TNRB", Picture = "../Images/Professors/banderson.jpg" });
+            myList.Add(new Faculty { Name = "Steve Liddle", Email = "liddle@byu.edu", Office = "784 TNRB", Picture = "../Images/Professors/sliddle.jpg" });
+            myList.Add(new Faculty { Name = "Tom Meservy", Email = "tmeservy@byu.edu", Office = "781 TNRB", Picture = "../Images/Professors/tmeservy.jpg" });
+
             return myList;
         }
         public List<Courses> getCourseList(CourseLevel cLevel)
