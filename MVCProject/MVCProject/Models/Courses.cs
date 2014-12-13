@@ -17,6 +17,8 @@ namespace MVCProject.Models
     {
        
         public int ID { get; set; }
+        [Required]
+        public string Number { get; set; }
 
         [Required]
         public string Name { get; set; }
