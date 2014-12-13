@@ -22,7 +22,7 @@ namespace MVCProject.Controllers
         //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
-            var model = this.getDegreeTypeList();
+            var model = getDegreeTypeList();
 
             ViewBag.Type = new SelectList(model,"Type","Type");
             //message that is displayed on the home page screen
@@ -96,7 +96,7 @@ namespace MVCProject.Controllers
             return myList;
         }
 
-        public List<DegreeType> getDegreeTypeList()
+        public static List<DegreeType> getDegreeTypeList()
         {
             var myList = new List<DegreeType>();
             myList.Add(new DegreeType { Type = "Undergraduate Degree" });

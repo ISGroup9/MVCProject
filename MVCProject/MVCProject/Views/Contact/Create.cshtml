@@ -53,10 +53,8 @@
             @Html.Label("Degree Type")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Degree_Type)
-            @Html.ValidationMessageFor(model => model.Degree_Type)
+            @Html.DropDownListFor(model=>model.Degree_Type.Type, ViewBag.Types as SelectList)
         </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.Notes)
         </div>
@@ -66,7 +64,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Send" onclick = "setTimeout(function () { alert('Your message has been sent!') }, 3000);"  />
+            <input type="submit" value="Send"  />
         </p>
     </fieldset>
 }

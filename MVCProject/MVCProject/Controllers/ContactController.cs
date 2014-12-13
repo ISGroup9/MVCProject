@@ -67,7 +67,8 @@ namespace MVCProject.Controllers
 
                         smtp.Send(mail);
                         ViewBag.Message = "Sent";
-                        return RedirectToRoute("Default");
+                        TempData["msg"] = "<script>alert('Thank you. You will be contacted shortly.');</script>";
+                        return Redirect("/");
                     }
                 
                
