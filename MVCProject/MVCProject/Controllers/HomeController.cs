@@ -12,7 +12,7 @@ namespace MVCProject.Controllers
         //private FacultyDbContext dbFaculty = new FacultyDbContext();
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Welcome to the Information Systems Home Page!";
 
             return View();
         }
