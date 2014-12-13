@@ -70,7 +70,7 @@
 {
     <p>View Program Requirements:</p>
     <p>
-        Degree: @Html.DropDownList("Type")
+        Degree: @Html.DropDownList("Type",ViewBag.Type as SelectList)
         <input type="submit" value="Go" />
     </p>
 }

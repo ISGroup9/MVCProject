@@ -24,7 +24,7 @@ namespace MVCProject.Controllers
         {
             var model = this.getDegreeTypeList();
 
-            ViewBag.Type = new SelectList(model,"ID","Type");
+            ViewBag.Type = new SelectList(model,"Type","Type");
             //message that is displayed on the home page screen
             ViewBag.Message = "Welcome to the Information Systems Home Page!";
 
@@ -32,9 +32,10 @@ namespace MVCProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(DegreeType d)
+        public ActionResult Index(FormCollection form)
         {
-            if (d.Type=="Undergraduate Degree")
+            var opt = form["Type"];
+            if(opt == "Undergraduate Degree" )
                 return RedirectToAction("Courses");
             else return RedirectToAction("Courses/G");
 
