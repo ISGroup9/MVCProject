@@ -30,13 +30,16 @@ namespace MVCProject.Controllers
 
             return View(model);
         }
-
+        //This is called when you click the Go button near the dropdown
         [HttpPost]
         public ActionResult Index(FormCollection form)
         {
+            //it takes the information of which degree was select
             var opt = form["Type"];
             if(opt == "Undergraduate Degree" )
+                //if the degree is undergrad, it will take you to the undergrad page
                 return RedirectToAction("Courses");
+            //if the degree is grad, it will take you to the grad page
             else return RedirectToAction("Courses/G");
 
         }
@@ -95,7 +98,7 @@ namespace MVCProject.Controllers
 
             return myList;
         }
-
+        //This will make a quick list of two DegreeType objects so that they can be used for the dropdowns
         public static List<DegreeType> getDegreeTypeList()
         {
             var myList = new List<DegreeType>();

@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "Home Page";
 }
+
+<!--This is the menu bar-->
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -24,6 +26,9 @@
         </div>
     </section>
 }
+
+<!--Here is where the text of the Index page goes-->
+
 <h1>@ViewBag.Message</h1>
 <h3>Why we are #1:</h3>
 <ol class="round">
@@ -66,6 +71,8 @@
     
     
 </ol>
+
+<!--This is the dropdown box that will allow you to select whether you want to view the requirements for the Undergraduate or Graduate program-->
 @using (Html.BeginForm("Index","Home"))
 {
     <p>View Program Requirements:</p>
@@ -74,4 +81,5 @@
         <input type="submit" value="Go" />
     </p>
 }
+<!--This creates a message box that will pop up if an email was sent-->
 @Html.Raw(TempData["msg"])
