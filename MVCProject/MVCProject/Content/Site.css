@@ -17,22 +17,28 @@ body {
 a {
     color: #FFF;
     outline: none;
-    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-decoration: none;
-    font-size: 1.15em;
+    font-size: 1.10em;
+    font-weight: bold;
     
 }
 
     a:link {
         color: #FFF;
-        font-size: 1.15em;
+        font-size: 1.10em;
+        font-weight: bold;
     }
 
     a:hover {
-        color: #333;
+        color: #474747;
         background-color: #FFF;
         text-decoration: none;
-        font-size: 1.15em;
+        font-size: 1.10em;
+        font-weight: bold;
     }
 
 header, footer, hgroup,
@@ -225,7 +231,7 @@ ul#menu {
         background-image: -webkit-linear-gradient(left, #002E7A 0%, #002E7A 100%);
         background-image: linear-gradient(left, #002E7A 0%, #002E7A 100%);
         color: #002E7A;
-        padding: 20px 40px 30px 40px;
+        padding: 5px 40px 5px 40px;
     }
 
         .featured hgroup.title h1, .featured hgroup.title h2 {

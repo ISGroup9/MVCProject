@@ -13,10 +13,10 @@
 
             <p>
                 <a href="~/Home/"> Home </a>
-                <a href="~/Home/Faculty"> Faculty </a>
-                <a href="~/Home/Advisory"> Advisory Board</a>
                 <a href="~/Home/Courses"> Undergraduate Courses</a>
                 <a href="~/Home/Courses/G"> Graduate Courses</a>
+                <a href="~/Home/Faculty"> Faculty </a>
+                <a href="~/Home/Advisory"> Advisory Board</a>
                 <a href="~/Home/Contact"> Contact Us</a>
 
             </p>
@@ -27,37 +27,46 @@
 
 
     <h2>Faculty</h2>
+    @*create the title for the faculty table*@
     <table>
         <tr>
             <th>
+                @*grab the picture title from the model*@
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th>
+                @*grab the name title from the model*@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
+                @*grab the email title from the model*@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
+                @*grab the office title from the model*@
                 @Html.DisplayNameFor(model => model.Office)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Picture)
-            </th>
-            <th></th>
         </tr>
 
+        @*for each faculty member in the faculty model, add them to the faculty table*@
         @foreach (var item in Model)
         {
             <tr>
                 <td>
+                    @*grab the picture from the model*@
+                    <img src="@item.Picture" alt="item.Name" width="75" />
+                </td>
+                <td>
+                    @*grab the name from the model*@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
+                    @*grab the email from the model*@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
+                    @*grab the office from the model*@
                     @Html.DisplayFor(modelItem => item.Office)
-                </td>
-                <td>
-                    <img src="@item.Picture" alt="item.Name" width="150" />
                 </td>
             </tr>
         }

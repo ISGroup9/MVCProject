@@ -47,7 +47,7 @@ namespace MVCProject.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "  - We would love to hear from you.";
 
             return View();
         }
@@ -59,9 +59,11 @@ namespace MVCProject.Controllers
             {
                 case "G":
                     model = this.getCourseList(CourseLevel.Graduate);
+                    ViewBag.Message = "Graduate Courses";
                     break;
                 default:
                     model = this.getCourseList(CourseLevel.Undergraduate);
+                    ViewBag.Message = "Undergraduate Courses";
                     break;
             }
             return View(model);
@@ -78,7 +80,7 @@ namespace MVCProject.Controllers
             myList.Add(new Faculty { Name = "Bonnie Anderson", Email = "anderson@byu.edu", Office = "776 TNRB", Picture = "../Images/Professors/banderson.jpg" });
             myList.Add(new Faculty { Name = "Steve Liddle", Email = "liddle@byu.edu", Office = "784 TNRB", Picture = "../Images/Professors/sliddle.jpg" });
             myList.Add(new Faculty { Name = "Tom Meservy", Email = "tmeservy@byu.edu", Office = "781 TNRB", Picture = "../Images/Professors/tmeservy.jpg" });
-            myList.Add(new Faculty { Name = "Marshall Romney", Email = "MRomney@byu.edu", Office = "790A TNRB", Picture = "../Images/Professors/mromney.jpg" });
+            myList.Add(new Faculty { Name = "Marshall Romney", Email = "mromney@byu.edu", Office = "790A TNRB", Picture = "../Images/Professors/mromney.jpg" });
 
             return myList;
         }

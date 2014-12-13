@@ -7,6 +7,7 @@ using System.Web;
 
 namespace MVCProject.Models
 {
+    //create the model
     public class Faculty
     {
         public int ID { get; set; }
