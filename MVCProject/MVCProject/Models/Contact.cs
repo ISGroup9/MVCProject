@@ -18,9 +18,9 @@ namespace MVCProject.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
+        
         [Required]
-        public string Degree_Type { get; set; }
+        public DegreeType Degree_Type { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string Notes { get; set; }
