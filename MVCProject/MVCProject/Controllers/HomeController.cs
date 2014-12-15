@@ -114,10 +114,12 @@ namespace MVCProject.Controllers
             var myList = new List<Courses>();
             myList.Add(new Courses { Number = "IS 401", Name = "Systems Analysis and Design", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 402", Name = "Database Systems", CreditHours = "3", Level = CourseLevel.Undergraduate });
-            myList.Add(new Courses { Number = "IS 403", Name = "Principles of Business ", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 403", Name = "Principles of Business Programming", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 404", Name = "Data Communications", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 411", Name = "Systems Design and Implementation", CreditHours = "3", Level = CourseLevel.Undergraduate });
             myList.Add(new Courses { Number = "IS 413", Name = "Enterprise Application Development", CreditHours = "3", Level = CourseLevel.Undergraduate });
+            myList.Add(new Courses { Number = "IS 414", Name = "Business Processes and Controls", CreditHours = "3", Level = CourseLevel.Undergraduate });
+
 
             myList.Add(new Courses { Number = "IS 531", Name = "Enterprise Infrastructure", CreditHours = "3", Level = CourseLevel.Graduate });
             myList.Add(new Courses { Number = "IS 550", Name = "MISM Capstone Introduction", CreditHours = ".5", Level = CourseLevel.Graduate });
