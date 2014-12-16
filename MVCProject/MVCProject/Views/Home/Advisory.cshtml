@@ -29,6 +29,7 @@
 <h2>Advisory</h2>
 <table>
     <tr align="center">
+        @*The headings for the Advisory Board*@
         <th>
             @Html.DisplayNameFor(model => model.Picture)
         </th>
@@ -43,6 +44,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            @*The list of advisors*@
             <td>
                 <img src="@item.Picture" alt="item.Name" width="75" />
             </td>

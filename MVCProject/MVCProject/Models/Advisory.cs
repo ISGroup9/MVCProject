@@ -9,7 +9,7 @@ namespace MVCProject.Models
 {
     public class Advisory
     {
-       
+       //Getters and setters for Advisory page - Includes: ID, Name, Email, Picture
         public int ID { get; set; }
 
         [Required]
@@ -24,6 +24,7 @@ namespace MVCProject.Models
 
     public class AdvisoryDbContext : DbContext
     {
+        //Getter and setter for advisory list.
         public DbSet<Advisory> Advisory { get; set; }
     }
 }

@@ -29,6 +29,7 @@
 <h2>@ViewBag.Message</h2>
 <table>
     <tr>
+        @*Displays the course headers*@
         <th  style="padding-right:10px">
             Course @Html.DisplayNameFor(model => model.Number)
         </th>
@@ -43,6 +44,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            @*Lists the courses that are passed from model.*@
             <td align="center">
                 @Html.DisplayFor(modelItem => item.Number)
             </td>
