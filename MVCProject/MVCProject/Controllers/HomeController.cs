@@ -49,6 +49,7 @@ namespace MVCProject.Controllers
         //    return View();
         //}
 
+        //Sets model to the array of Advisors. Returns the advisory view
         public ActionResult Advisory()
         {
             var model = this.getAdvisoryList();
@@ -65,21 +66,25 @@ namespace MVCProject.Controllers
         }
 
       
-
+        //Searches for all courses for Ungergraduates
         public ActionResult Courses(string id = "U")
         {
             List<Courses> model;
+
+            //If there is a G, it passes the courses that have the Graduate attribute
             switch (id.ToUpper())
             {
                 case "G":
                     model = this.getCourseList(CourseLevel.Graduate);
                     ViewBag.Message = "Graduate Courses";
                     break;
+                //If it does not find the letter G, then only undergraduate courses will be shown.
                 default:
                     model = this.getCourseList(CourseLevel.Undergraduate);
                     ViewBag.Message = "Undergraduate Courses";
                     break;
             }
+            //Shows the course view
             return View(model);
         }
 

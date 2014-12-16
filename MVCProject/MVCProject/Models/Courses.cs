@@ -9,13 +9,14 @@ namespace MVCProject.Models
 {
     public enum CourseLevel
     {
+        //Sets undergraduate to 0, graduate to 1.
         Undergraduate = 0,
         Graduate = 1
     }
 
     public class Courses
     {
-       
+       //Getters and setters for courses - Includes: ID, Number, Name, CreditHours, and Courselevel(the enum declared above)
         public int ID { get; set; }
         [Required]
         public string Number { get; set; }
@@ -32,6 +33,7 @@ namespace MVCProject.Models
 
     public class CoursesDbContext : DbContext
     {
+        //Getter and setter for course list.
         public DbSet<Courses> Courses { get; set; }
     }
 }

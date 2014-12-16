@@ -12,6 +12,7 @@ namespace MVCProject.Models
     //A Degree Type object, and optional notes
     public class Contact
     {
+        //Getters and setters for the contact informatino from the contact page. Includes:Name, Email, DegreeType, and Notes
         public int ID { get; set; }
         
         [Required]
@@ -31,6 +32,7 @@ namespace MVCProject.Models
 
     public class ContactDbContext : DbContext
     {
+        //Getter and setter for Contacts list.
         public DbSet<Contact> Contacts { get; set; }
     }
 }

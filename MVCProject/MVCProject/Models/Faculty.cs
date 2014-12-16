@@ -10,6 +10,7 @@ namespace MVCProject.Models
     //create the model
     public class Faculty
     {
+        //Getters and setters for Faculty: Includes ID, Name, Email, Office, and Picture
         public int ID { get; set; }
 
         //[Required]
@@ -26,6 +27,7 @@ namespace MVCProject.Models
 
     public class FacultyDbContext : DbContext
     {
+        //Getter and setter for a list of faculty
         public DbSet<Faculty> Faculty { get; set; }
     }
 }
